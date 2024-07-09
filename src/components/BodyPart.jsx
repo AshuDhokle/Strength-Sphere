@@ -1,5 +1,5 @@
 import React from 'react';
-import { Stack, Typography } from '@mui/material';
+import { Button, Stack, Typography } from '@mui/material';
 import Icon from '../assets/images/bodyPart.png';
 
 const BodyPart = ({ item, setBodyPart, bodyPart }) => {
@@ -8,18 +8,19 @@ const BodyPart = ({ item, setBodyPart, bodyPart }) => {
     type="button"
     alignItems="center"
     justifyContent="center"
-    className="bodyPart-card"
-    m={2}
-    sx={{  borderTop: bodyPart === item ? '4px solid #FF2625' : '', borderBottom:"10px solid #00224D", background: 'aliceblue', width: '200px', height: '200px', cursor: 'pointer', gap: '47px', borderBottomLeftRadius: '20px', boxShadow:10 } }
+    mx={2}
+    my={1}
     onClick={() => {
       setBodyPart(item);
       window.scrollTo({ top: 1000, behavior: 'smooth' });
     }}
   >
-    <img src={Icon} alt="dumbbell" style={{ width: '70px', height: '70px' }} className="" />
-    <Typography fontSize="15px" fontWeight="bold" fontFamily="" color="black" textTransform="capitalize"> {item}</Typography>
+    <Button variant="outlined" color='error' sx={{px:4, width:"200px"}}>
+    <Typography fontSize="15px" color="black" textTransform="capitalize" sx={{color:'black'}}> {item}</Typography>
+    </Button>
   </Stack>
   )
+  
 };
 
 export default BodyPart;

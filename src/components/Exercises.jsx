@@ -7,7 +7,7 @@ import {options,fetchData} from '../utils/fetchData';
 const Exercises = ({exercises,setExercises,bodyPart}) => {
   //console.log(exercises);
   const [currentPage,setCurrentPage] = useState(1);
-  const [exercisesPerPage,setExercisesPerPage] = useState(4);
+  const [exercisesPerPage,setExercisesPerPage] = useState(3);
   
   const paginate = (e,value) => {
       setCurrentPage(value);
@@ -36,14 +36,11 @@ const Exercises = ({exercises,setExercises,bodyPart}) => {
 
   return (
     <Box id ='exercises'
-         sx = {{mt:{lg:'110px'}}}
+         sx = {{mt:{lg:'25px'}}}
          mt = "50px"
          p = "20px"
     >
-      <Typography variant='h3'  >
-        
-      </Typography>
-      <Stack direction='row' sx={{gap:{lg:'110px',xs:'50px'}}}
+      <Stack direction='row' sx={{gap:'50px'}}
         flexWrap='wrap' justifyContent='center'
       >
         {

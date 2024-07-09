@@ -2,20 +2,19 @@ import React, { useContext, useEffect, useState } from 'react';
 import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu';
 import 'react-horizontal-scrolling-menu/dist/styles.css'
 import { Box, Typography } from '@mui/material';
-
 import ExerciseCard from './ExerciseCard';
 import BodyPart from './BodyPart';
-import RightArrowIcon from '../assets/images/right.png';
-import LeftArrowIcon from '../assets/images/left.png';
 import { useSelector } from 'react-redux';
 import { selectBodyParts } from '../features/exercises/bodyPartsSlice';
+import { FaAngleLeft } from "react-icons/fa";
+import { FaAngleRight } from "react-icons/fa";
 
 const LeftArrow = () => {
   const { scrollPrev } = useContext(VisibilityContext);
 
   return (
     <Typography onClick={() => scrollPrev()} className="right-arrow">
-      <img src={LeftArrowIcon} alt="right-arrow" className='size-4 mx-2 mt-4'   />
+      <FaAngleLeft className='size-6 px-1 h-full hover:text-white' />  
     </Typography>
   );
 };
@@ -25,7 +24,7 @@ const RightArrow = () => {
 
   return (
     <Typography onClick={() => scrollNext()} className="left-arrow">
-      <img src={RightArrowIcon} alt="right-arrow" className='size-4 mx-1 mt-4' />
+      <FaAngleRight className='size-6 px-1 h-full  hover:text-white'/>
     </Typography>
   );
 };
@@ -34,7 +33,7 @@ const HorizontalScrollbar = ({ exercises,setBodyPart, bodyPart,isBodyParts }) =>
   const data = useSelector(selectBodyParts);
   return(
     
-  <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow}>
+  <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow} >
     {
       isBodyParts ? (data.map((item) => (
       <Box
@@ -44,7 +43,8 @@ const HorizontalScrollbar = ({ exercises,setBodyPart, bodyPart,isBodyParts }) =>
         m="0"
       >
         <BodyPart item={item} setBodyPart={setBodyPart} bodyPart={bodyPart} />
-      </Box>)
+      </Box>
+      )
       )
       )
       :

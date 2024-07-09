@@ -12,13 +12,13 @@ const SimilarExercises = ({}) => {
     <Box sx={{
       mt:{lg:'100px', xs:'0'},
     }} >
-      <Typography variant='h5' ml={3} mb={1} color="#00215E">
+      <Typography variant='h5' ml={3} mb={3} color="#00215E">
         Exercises that target the same muscle group
       </Typography>
       <Stack direction='row' sx={{p:'2px', position:'relative'}} alignItems={'center'} justifyContent={'center'} height={'400px'}>
         { targetMuscleExercises.length ? <HorizontalScrollBar exercises={targetMuscleExercises}/> : <LoaderComp/>}
       </Stack>
-      <Typography variant='h5' ml={3} mb={1} mt={10} color="#00215E">
+      <Typography variant='h5' ml={3} mb={3} mt={10} color="#00215E">
         Exercises that use the same equipment
       </Typography>
       <Stack direction='row' sx={{p:'2px', position:'relative'}} alignItems={'center'} justifyContent={'center'} height={'400px'}>

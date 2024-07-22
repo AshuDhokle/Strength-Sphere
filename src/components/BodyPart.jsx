@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Stack, Typography } from '@mui/material';
 import Icon from '../assets/images/bodyPart.png';
 
-const BodyPart = ({ item, setBodyPart, bodyPart }) => {
+const BodyPart = ({ item, setBodyPart }) => {
   return(
   <Stack
     type="button"
